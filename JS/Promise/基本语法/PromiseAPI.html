@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise API</title>
+</head>
+
+<body>
+    <script>
+        // Promise.resolve
+        let p1 = Promise.resolve(521)
+        //如果传入的参数为 非promise类型的对象，则返回的结果为成功promise对象
+        //如果传入的参数为 Promise对象，则参数的结果决定了 resolve 的结果
+        let p2 = Promise.resolve(new Promise((resolve, reject) => {
+            reject('ERROR')
+        }))
+        p2.catch(reason => {
+            console.log(reason)
+        })
+        console.log("Promise.resolve:p1",p1)
+        console.log("Promise.resolve:p2",p2)
+
+
+        // Promise.reject
+        // 不管传入的参数的类型，都返回一个失败的 promise 对象
+        // 失败的结果就是你传入的参数
+        let p3 = Promise.reject(123)
+        p3.catch(reason => {
+            console.log("p3的reason",reason)
+        })
+        console.log('Promise.reject:p3',p3)
+
+
+        //Promise.all
+        //参数是 包含n个promise对象的数组
+        //说明： 返回一个新的promise，只有所有的promise都成功才成功
+        //只要有一个失败了就直接失败
+        let p4 = new Promise((resolve,reject) => {
+            resolve('OK')
+        })
+        let p5 = new Promise((resolve,reject) => {
+            reject('Failed')
+        })
+        let p6 = new Promise((resolve,reject) => {
+            reject('Oh No')
+        })
+        //如果对rejected状态的promise不做处理，就会报错
+        const promiseAllResult = Promise.all([p4,p5,p6])
+        //成功的 promise 的结果值就是数组中 promise 的结果值，也是一个数组
+        //失败的 promise 的结果值就是数组中返回的失败的结果值
+        console.log('Promise.all:promiseAllResult',promiseAllResult)
+
+
+        // Promise.race
+        // 说明：返回一个新的promise，第一个完成的promise的状态就是返回的结果的状态
+        let p7 = new Promise((resolve,reject) => {
+            resolve('Success')
+        })
+        let p8 = new Promise((resolve,reject) => {
+            resolve('Oh Yeah')
+        })
+        //p4先执行，所有这里应该返回p4的结果
+        const promsieRaceResult  = Promise.race([p4,p7,p8])
+        console.log("promsie.race:promsieRaceResult",promsieRaceResult)
+    </script>
+</body>
+
+</html>
