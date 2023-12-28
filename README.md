@@ -11,3 +11,7 @@
 ### 2.class 参考课程
 
 - https://www.bilibili.com/video/BV1i54y1i7sZ/?p=9&spm_id_from=pageDriver&vd_source=05aef991177b8a8f29afcb4a828a8fec
+
+### 3.AJAX 参考课程
+
+- https://www.bilibili.com/video/BV1WC4y1b78y?p=16&spm_id_from=pageDriver&vd_source=05aef991177b8a8f29afcb4a828a8fec
