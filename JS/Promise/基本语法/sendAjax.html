@@ -15,6 +15,7 @@
         // 返回结果 Promise 对象
         function sendAJAX(url) {
             return new Promise((reslove, reject) => {
+                //1.创建对象
                 const xhr = new XMLHttpRequest();
                 //2.初始化
                 xhr.open("GET", "https://api.apiopen.top/getJoke");

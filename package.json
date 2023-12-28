@@ -1,0 +1,15 @@
+{
+  "name": "weblearning",
+  "version": "1.0.0",
+  "description": "2023.12.27 备战蓝桥杯 web 前端",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
