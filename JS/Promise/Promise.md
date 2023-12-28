@@ -201,6 +201,22 @@ new Promise((resolve, reject) => {
 
 ### 中断Promise链
 
+## then方法回调的异步执行
+**then中的回调是异步执行的**
+```js
+let p1 = new Promise((resolve,reject) => {
+  resolve('ok')
+  console.log(111)
+})
+
+p1.then(value => {
+  console.log(222)
+})
+
+console.log(333)
+// 打印顺序是111 333 222
+```
+
 
 ## util.promisify
 

@@ -11,20 +11,16 @@
 
 <body>
     <script>
-        let p = new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve('hello promise')
-            },1000)
-        })
+let p1 = new Promise((resolve,reject) => {
+  reject('ok')
+  console.log(111)
+})
 
-        const res = p.then(value => {
-            return "521"
-        }, reason => {
-            return "521"
-            console.log(reason)
-        })
+p1.then(value => {
+  console.log(222)
+})
 
-        console.log(res)
+console.log(333)
     </script>
 </body>
 
