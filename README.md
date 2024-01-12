@@ -16,5 +16,14 @@
 
 - https://www.bilibili.com/video/BV1WC4y1b78y?p=16&spm_id_from=pageDriver&vd_source=05aef991177b8a8f29afcb4a828a8fec
 
-### 4. axios参考课程
+## axios
+
+### 参考课程
+
 - https://www.bilibili.com/video/BV1wr4y1K7tq/?spm_id_from=333.337.search-card.all.click&vd_source=05aef991177b8a8f29afcb4a828a8fec
+
+## Vue
+
+### 参考课程
+
+- https://www.bilibili.com/video/BV1Rs4y127j8?p=12&vd_source=05aef991177b8a8f29afcb4a828a8fec
