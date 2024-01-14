@@ -88,3 +88,65 @@ Vue 默认按照“就地更新”的策略来更新通过 v-for 渲染的元素
 
 **事件参数可以获取 event 对象和通过事件传递数据**
 Vue 中的 event 对象就是原生 js 的 event 对象
+
+**传递参数**
+
+```vue
+<template>
+  <p
+    @click="getNameHandle(item, $event)"
+    v-for="(item, index) in names"
+    :key="index"
+  >
+    {{ item }}
+  </p>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      names: ["iwen", "ime", "frank"],
+    };
+  },
+  methods: {
+    getNameHandle(name, e) {
+      console.log(name, e);
+    },
+  },
+};
+</script>
+```
+
+## 数组变化侦测
+
+### 变更方法
+
+- push()
+- pop()
+- shift()
+- unshift()
+- splice()
+- sort()
+- reverse()
+  **使用这些方法改变数组，UI 自动更新**
+
+### 替换一个数组
+
+- filter()
+- concat()
+- slice()
+  **返回一个新数组**,需要将旧数组替换为新数组。
+
+## 计算属性 computed
+
+模板中的表达式虽然方便，但也只能用来做简单的操作。如果在模板中写太多逻辑，会让模板变得臃肿，难以维护。
+推荐使用计算属性来描述依赖响应式状态的复杂逻辑
+
+**计算属性和方法的区别**
+计算属性：**计算属性值会基于其响应式依赖被缓存**。
+一个计算属性仅会在其**响应式依赖更新时才重新计算方法**
+方法调用总是会在重渲染发生时再次执行函数
+
+## 侦听器 watch
+
+**watch 选项在每次响应式属性发生变化时触发一个函数**
